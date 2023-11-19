@@ -1,24 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:miapp/widgets/login.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({super.key});
+  const HomePage({Key? key}) : super(key: key);
 
   @override
-  State<HomePage> createState() => _HomePageState();
+  _HomePageState createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-
   int _primerapagina = 0;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color.fromARGB(255, 60, 90, 188),
-        title: Text('Mi Primera App', style: TextStyle(fontWeight: FontWeight.w400),),
+        title: Text(
+          'Mi Primera App',
+          style: TextStyle(fontWeight: FontWeight.w400),
+        ),
+        backgroundColor: Color.fromARGB(255, 39, 32, 136)
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Flexible(
             flex: 1,
@@ -34,25 +38,43 @@ class _HomePageState extends State<HomePage> {
             flex: 2,
             child: Container(
               alignment: Alignment.center,
-              child: Text(
-                'Creado por Billy Salmerón',
-                style: TextStyle(
-                  fontSize: 24,
-                  fontWeight: FontWeight.w400,
-                ),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Creado por Billy Salmerón',
+                    style: TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.w400,
+                    ),
+                  ),
+                  SizedBox(height: 20),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    },
+                    style: ElevatedButton.styleFrom(
+                          backgroundColor: Color.fromARGB(255, 39, 32, 136),
+                          elevation: 0,
+                        ),
+                    child: Text('Login'),
+                  ),
+                ],
               ),
             ),
           ),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-      onPressed: () {
-        },
-      child: Icon(Icons.add),
-      backgroundColor: Color.fromARGB(255, 128, 62, 227),
+        onPressed: () {},
+        child: Icon(Icons.add),
+        backgroundColor: Color.fromARGB(255, 128, 62, 227),
       ),
       bottomNavigationBar: BottomNavigationBar(
-        onTap: (index){
+        onTap: (index) {
           setState(() {
             _primerapagina = index;
           });
@@ -63,17 +85,17 @@ class _HomePageState extends State<HomePage> {
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Inicio',
-            backgroundColor: Color.fromARGB(255, 20, 48, 229)
+            backgroundColor: Color.fromARGB(255, 20, 48, 229),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
-            backgroundColor: Color.fromARGB(255, 233, 136, 17)
+            backgroundColor: Color.fromARGB(255, 233, 136, 17),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.shopping_cart),
             label: 'Shop',
-            backgroundColor: Color.fromARGB(255, 44, 207, 7)
+            backgroundColor: Color.fromARGB(255, 44, 207, 7),
           ),
           BottomNavigationBarItem(
             icon: Icon(Icons.calendar_today),
