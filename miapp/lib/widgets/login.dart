@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:miapp/src/pages/menu.dart';
 
 class Login extends StatelessWidget {
   const Login({Key? key}) : super(key: key);
@@ -23,7 +24,8 @@ class Login extends StatelessWidget {
           ),
           SingleChildScrollView(
             child: Container(
-              margin: EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.3),
+              margin: EdgeInsets.only(
+                  top: MediaQuery.of(context).size.height * 0.3),
               padding: EdgeInsets.all(16.0),
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -46,7 +48,8 @@ class Login extends StatelessWidget {
                       prefixIcon: Icon(Icons.email),
                       border: OutlineInputBorder(),
                       filled: true,
-                      fillColor: Color.fromARGB(46, 6, 122, 82).withOpacity(0.2),
+                      fillColor:
+                          Color.fromARGB(46, 6, 122, 82).withOpacity(0.2),
                     ),
                   ),
                   SizedBox(height: 16),
@@ -57,7 +60,8 @@ class Login extends StatelessWidget {
                       prefixIcon: Icon(Icons.lock),
                       border: OutlineInputBorder(),
                       filled: true,
-                      fillColor: Color.fromARGB(255, 157, 15, 212).withOpacity(0.1),
+                      fillColor:
+                          Color.fromARGB(255, 157, 15, 212).withOpacity(0.1),
                     ),
                   ),
                   SizedBox(height: 16),
@@ -65,8 +69,7 @@ class Login extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
                       TextButton(
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Text(
                           'Olvidó su contraseña?',
                           style: TextStyle(
@@ -75,8 +78,7 @@ class Login extends StatelessWidget {
                         ),
                       ),
                       TextButton(
-                        onPressed: () {
-                        },
+                        onPressed: () {},
                         child: Text(
                           'No tiene cuenta? Regístrese',
                           style: TextStyle(
@@ -96,13 +98,17 @@ class Login extends StatelessWidget {
                       ),
                       child: ElevatedButton(
                         onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => MenuLateral()));
                         },
                         style: ElevatedButton.styleFrom(
                           backgroundColor: Color.fromARGB(255, 39, 32, 136),
                           elevation: 0,
                         ),
                         child: Text(
-                          'Sign Up',
+                          'Sign In',
                           style: TextStyle(
                             color: Colors.white,
                           ),

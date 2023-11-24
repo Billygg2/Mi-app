@@ -42,7 +42,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'Creado por Billy Salmerón',
+                    'Creado por Billy Salmerón | Para entrar al Menu entrar al login y presionar en sign in || Funciona cerrar sesión',
                     style: TextStyle(
                       fontSize: 24,
                       fontWeight: FontWeight.w400,
